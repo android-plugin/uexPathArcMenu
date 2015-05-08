@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<title>Demo</title>
+<script type="text/javascript">
+    window.uexOnload = function() {
+		uexWidgetOne.onError = function(opCode, errorCode, errorDesc) {
+			alert(errorCode + ":" + errorDesc);
+		}
+	}
+    function createDemo(){
+        uexPathArcMenu.onItemClick = CallBack;
+        uexPathArcMenu.open('160','320');
+    }
+    function setMode(index){
+	    var params= {
+			style: {
+					type:index
+				}
+	    };
+        uexPathArcMenu.setStyle(JSON.stringify(params));
+    }
+    function CallBack(data){
+        alert("回掉成功,item = "+data);
+    }
+    function closeDemo(){
+        uexPathArcMenu.close();
+    }
+    
+</script>
+</head>
+
+<body>
+	<div class="tit">Demo</div>
+        <div class="conbor">
+            <div class="consj">
+                <input class="btn" type="button" value="打开Menu,默认90度" onclick="createDemo();"/>
+                <input class="btn" type="button" value="切换模式1，左边" onclick="setMode(1);"/>
+
+                <input class="btn" type="button" value="切换模式2，右边" onclick="setMode(2);"/>
+
+                <input class="btn" type="button" value="关闭" onclick="closeDemo();"/>
+            </div>
+        </div>
+</body>
+</html>
