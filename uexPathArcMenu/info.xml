@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
-<plugin
-     uexName="uexPathArcMenu" version="3.0.0" build="0">
-<info>build 0:插件开发uexPathArcMenu</info>
-</plugin>
+    <plugin
+         uexName="uexPathArcMenu" version="3.0.0" build="0">
+        <info>0:弧形菜单插件</info>
+    </plugin>
 </uexplugins>
