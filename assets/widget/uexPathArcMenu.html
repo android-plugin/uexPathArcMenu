@@ -11,21 +11,34 @@
 		uexWidgetOne.onError = function(opCode, errorCode, errorDesc) {
 			alert(errorCode + ":" + errorDesc);
 		}
-	}
-    function createDemo(){
         uexPathArcMenu.onItemClick = CallBack;
-        uexPathArcMenu.open('160','320');
+	}
+    function createBlack(){
+        var params = {
+            position:0,
+            bgColor:"#00000000",
+            icon:"res://black_icon.png",
+            data:[
+                "res://black_menu_1.png",
+                "res://black_menu_2.png",
+                "res://black_menu_3.png",
+                "res://black_menu_5.png",
+                "res://black_menu_4.png"
+            ]
+        };
+        var data = JSON.stringify(params);
+        uexPathArcMenu.open(data);
     }
+
     function setMode(index){
-	    var params= {
-			style: {
-					type:index
-				}
-	    };
+        var params = {
+            position:index
+        };
         uexPathArcMenu.setStyle(JSON.stringify(params));
     }
     function CallBack(data){
-        alert("回掉成功,item = "+data);
+        var index = JSON.parse(data).index;
+        alert("点击了第" + (index + 1) + "个元素");
     }
     function closeDemo(){
         uexPathArcMenu.close();
@@ -38,10 +51,10 @@
 	<div class="tit">Demo</div>
         <div class="conbor">
             <div class="consj">
-                <input class="btn" type="button" value="打开Menu,默认90度" onclick="createDemo();"/>
-                <input class="btn" type="button" value="切换模式1，左边" onclick="setMode(1);"/>
+                <input class="btn" type="button" value="打开Menu" onclick="createBlack();"/>
+                <input class="btn" type="button" value="切换模式1,左边" onclick="setMode(1);"/>
 
-                <input class="btn" type="button" value="切换模式2，右边" onclick="setMode(2);"/>
+                <input class="btn" type="button" value="切换模式2,中间" onclick="setMode(0);"/>
 
                 <input class="btn" type="button" value="关闭" onclick="closeDemo();"/>
             </div>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
-   <plugin
-        className="com.tmf.plugin.uexpatharcmenu.EUExPathArcMenu" 
+    <plugin
+        className="org.zywx.wbpalmstar.plugin.uexpatharcmenu.EUExPathArcMenu"
         uexName="uexPathArcMenu" >
         <method name="open" />
         <method name="close" />
         <method name="setStyle" />
-       
     </plugin>
 </uexplugins>
